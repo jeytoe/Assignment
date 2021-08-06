@@ -2,7 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
 }
 
 android {
@@ -58,6 +57,8 @@ dependencies {
     implementation libraries.picasso
     implementation libraries.retrofitGsonConverter
     implementation libraries.playCore
+    implementation libraries.constraintLayout
+    implementation libraries.okhttpLoggingInterceptor
 
     androidTestImplementation instrumentationTestLibraries.espressoCore
     androidTestImplementation instrumentationTestLibraries.espressoIntents
@@ -68,7 +69,6 @@ dependencies {
 
     kapt compilers.dagger
     kapt compilers.daggerAndroid
-    kapt libraries.glideImageCompiler
 
     testImplementation unitTestLibraries.junit
     testImplementation unitTestLibraries.mockito
