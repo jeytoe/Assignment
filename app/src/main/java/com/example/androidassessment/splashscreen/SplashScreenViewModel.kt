@@ -25,5 +25,6 @@ class SplashScreenViewModel @Inject constructor(
 
     override fun onCleared() {
         super.onCleared()
+        compositeDisposable.clear()
     }
 }

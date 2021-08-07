@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-<!--  <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">-->
-<!--    <item name="android:textViewStyle">@style/SqTextView</item>-->
-<!--    <item name="android:buttonStyle">@style/SqButton</item>-->
-<!--    <item name="colorControlNormal">@color/sia_blue</item>-->
-<!--    <item name="colorControlActivated">@color/sia_blue</item>-->
-<!--    <item name="android:windowTranslucentStatus">true</item>-->
-<!--    <item name="android:statusBarColor">@color/status_bar</item>-->
-<!--  </style>-->
+  <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+    <item name="colorControlNormal">@color/sia_blue</item>
+    <item name="colorControlActivated">@color/sia_blue</item>
+    <item name="android:windowTranslucentStatus">true</item>
+    <item name="android:statusBarColor">@color/status_bar</item>
+  </style>
 
 <!--  <style name="Theme.WebViewProgress" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">-->
 <!--    <item name="android:textViewStyle">@style/SqTextView</item>-->

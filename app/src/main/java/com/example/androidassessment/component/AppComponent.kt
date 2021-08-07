@@ -2,10 +2,10 @@ package com.example.androidassessment.component
 
 import android.app.Activity
 import com.example.androidassessment.MyApplication
-import com.example.androidassessment.component.modules.AppInjectorsModule
-import com.example.androidassessment.component.modules.AppModule
-import com.example.androidassessment.splashscreen.SplashScreenActivity
-import com.singaporeair.recentsearch.UserDatabaseModule
+import com.example.androidassessment.component.modules.app.AppInjectorsModule
+import com.example.androidassessment.component.modules.app.AppModule
+import com.example.androidassessment.login.LoginActivity
+import com.example.androidassessment.component.modules.database.UserDatabaseModule
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.DispatchingAndroidInjector

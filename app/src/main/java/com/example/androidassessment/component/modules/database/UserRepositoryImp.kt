@@ -23,6 +23,4 @@ class UserRepositoryImp @Inject constructor(
     override fun clearUsers() {
         userDaoService.clearAll()
     }
-
-
 }
