@@ -4,6 +4,7 @@ import android.os.Bundle
 import com.example.androidassessment.R
 import com.example.androidassessment.base.BaseActivity
 import com.example.androidassessment.common.AlertDialogFactory
+import com.example.androidassessment.common.KeyboardManager
 import com.example.androidassessment.databinding.ActivityLoginBinding
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
@@ -22,6 +23,9 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
 
     @Inject
     lateinit var viewModel: LoginViewModel
+
+    @Inject
+    lateinit var keyboardManager: KeyboardManager
 
     override fun getViewBinding(): ActivityLoginBinding {
         return ActivityLoginBinding.inflate(layoutInflater)
@@ -42,6 +46,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     override fun onStop() {
         super.onStop()
         compositeDisposable.clear()
+        keyboardManager.closeKeyboard(this, binding.parent.windowToken)
     }
 
     private fun bindEvents() {

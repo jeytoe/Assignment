@@ -36,7 +36,7 @@ class MyApplication : Application(), HasAndroidInjector {
         Picasso.setSingletonInstance(Picasso.Builder(this).build())
     }
 
-    private fun getAppComponent(): AppComponent? {
+    fun getAppComponent(): AppComponent? {
         if (appComponent == null) {
             buildAppComponent()
         }
