@@ -3,7 +3,8 @@ package com.example.androidassessment
 import android.app.Application
 import com.example.androidassessment.component.AppComponent
 import com.example.androidassessment.component.DaggerAppComponent
-import com.example.androidassessment.component.modules.AppModule
+import com.example.androidassessment.component.modules.app.AppModule
+import com.example.androidassessment.component.modules.database.UserDatabaseModule
 import com.squareup.leakcanary.LeakCanary
 import com.squareup.picasso.Picasso
 import dagger.android.AndroidInjector
@@ -45,6 +46,7 @@ class MyApplication : Application(), HasAndroidInjector {
     private fun buildAppComponent() {
         appComponent = DaggerAppComponent.builder()
             .appModule(AppModule(this))
+            .userDatabaseModule(UserDatabaseModule(this))
             .build()
         appComponent?.run { inject(this@MyApplication) }
     }

@@ -1,10 +1,7 @@
-package com.singaporeair.recentsearch
+package com.example.androidassessment.component.modules.database
 
 import android.content.Context
 import androidx.room.Room
-import com.example.androidassessment.component.modules.database.UserDatabase
-import com.example.androidassessment.component.modules.database.UserRepository
-import com.example.androidassessment.component.modules.database.UserRepositoryImp
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -12,11 +9,10 @@ import javax.inject.Singleton
 @Module
 class UserDatabaseModule constructor(context: Context) {
 
-    private var userDatabase: UserDatabase = Room.databaseBuilder<UserDatabase>(
+    private var userDatabase: UserDatabase = Room.databaseBuilder(
         context, UserDatabase::class.java, USER_DB
     )
         .fallbackToDestructiveMigration()
-        .allowMainThreadQueries()
         .build()
 
 

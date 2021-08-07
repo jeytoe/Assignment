@@ -9,7 +9,9 @@ interface UserRepository {
         password: String
     ): Observable<Boolean>
 
-    fun getUser(username: String, password: String): Observable<User>
+    fun getUser(username: String, password: String): Observable<List<User>>
+
+    fun getAllUser(): Observable<List<User>>
 
     fun clearUsers()
 }

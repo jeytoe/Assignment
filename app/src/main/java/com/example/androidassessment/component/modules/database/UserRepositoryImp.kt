@@ -12,8 +12,12 @@ class UserRepositoryImp @Inject constructor(
         return Observable.just(true)
     }
 
-    override fun getUser(username: String, password: String): Observable<User> {
-        return Observable.just(userDaoService.getUser(username, password))
+    override fun getUser(username: String, password: String): Observable<List<User>> {
+        return userDaoService.getUser(username, password)
+    }
+
+    override fun getAllUser(): Observable<List<User>> {
+        return userDaoService.getUserTable()
     }
 
     override fun clearUsers() {

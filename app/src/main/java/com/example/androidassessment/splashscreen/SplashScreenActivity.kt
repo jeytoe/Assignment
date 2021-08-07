@@ -1,11 +1,22 @@
 package com.example.androidassessment.splashscreen
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.content.Intent
+import android.os.Bundle
 import android.view.animation.LinearInterpolator
-import com.example.androidassessment.baseui.BaseActivity
+import androidx.lifecycle.ViewModelProvider
+import com.example.androidassessment.base.BaseActivity
 import com.example.androidassessment.databinding.ActivitySplashScreenBinding
+import com.example.androidassessment.login.LoginActivity
+import dagger.android.AndroidInjection
+import javax.inject.Inject
 
 
 class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
+
+    @Inject
+    lateinit var splashScreenViewModel: SplashScreenViewModel
 
     override fun getViewBinding(): ActivitySplashScreenBinding {
         return ActivitySplashScreenBinding.inflate(layoutInflater)
@@ -13,6 +24,11 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
 
     override fun getToolbarTitle(): Int = 0
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
+        splashScreenViewModel.initUserDatabase()
+    }
 
     override fun onResume() {
         super.onResume()
@@ -22,8 +38,15 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
     private fun displayLogo() {
         binding.imgLogo.animate()
             .alpha(1f)
-            .setDuration(2)
+            .setDuration(1500)
             .setInterpolator(LinearInterpolator())
+            .setListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator?) {
+                    startActivity(Intent(this@SplashScreenActivity,
+                        LoginActivity::class.java))
+                    finish()
+                }
+            })
             .start()
     }
 
