@@ -1,4 +1,4 @@
-package com.example.androidassessment.component.modules
+package com.example.androidassessment.component.modules.app
 
 import android.app.Application
 import android.content.Context

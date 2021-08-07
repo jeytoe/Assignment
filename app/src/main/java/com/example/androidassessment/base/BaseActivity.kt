@@ -1,4 +1,4 @@
-package com.example.androidassessment.baseui
+package com.example.androidassessment.base
 
 
 import android.os.Bundle
