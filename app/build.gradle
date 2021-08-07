@@ -63,6 +63,15 @@ dependencies {
     implementation libraries.playCore
     implementation libraries.constraintLayout
     implementation libraries.okhttpLoggingInterceptor
+    implementation libraries.room
+    implementation libraries.roomRxJava
+    implementation libraries.rxAndroid
+    implementation libraries.rxJava
+    implementation libraries.kotlinStd
+
+    annotationProcessor compilers.dagger
+    annotationProcessor compilers.daggerAndroid
+    annotationProcessor compilers.room
 
     androidTestImplementation instrumentationTestLibraries.espressoCore
     androidTestImplementation instrumentationTestLibraries.espressoIntents
@@ -73,6 +82,7 @@ dependencies {
 
     kapt compilers.dagger
     kapt compilers.daggerAndroid
+    kapt compilers.room
 
     testImplementation unitTestLibraries.junit
     testImplementation unitTestLibraries.mockito
