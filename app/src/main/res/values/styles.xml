@@ -60,15 +60,15 @@
 <!--    <item name="android:background">@drawable/card_bottom_rounded_corner_grey</item>-->
 <!--  </style>-->
 
-<!--  <style name="CardList">-->
-<!--    <item name="android:background">@android:color/white</item>-->
-<!--    <item name="android:paddingTop">@dimen/card_top_padding</item>-->
-<!--    <item name="android:paddingBottom">@dimen/card_bottom_padding</item>-->
-<!--    <item name="android:paddingStart">@dimen/card_side_padding</item>-->
-<!--    <item name="android:paddingEnd">@dimen/card_side_padding</item>-->
-<!--    <item name="android:layout_marginStart">@dimen/card_rounded_corner_margin</item>-->
-<!--    <item name="android:layout_marginEnd">@dimen/card_rounded_corner_margin</item>-->
-<!--  </style>-->
+  <style name="CardList">
+    <item name="android:background">@android:color/white</item>
+    <item name="android:paddingTop">5dp</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:paddingStart">5dp</item>
+    <item name="android:paddingEnd">5dp</item>
+    <item name="android:layout_marginStart">10dp</item>
+    <item name="android:layout_marginEnd">10dp</item>
+  </style>
 
 <!--  <style name="OverlayCard">-->
 <!--    <item name="android:background">@drawable/overlay_card</item>-->

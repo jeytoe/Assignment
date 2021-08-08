@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.androidassessment.base.BaseActivity
 import com.example.androidassessment.databinding.ActivitySplashScreenBinding
 import com.example.androidassessment.login.LoginActivity
+import com.example.androidassessment.main.MainActivity
 import dagger.android.AndroidInjection
 import javax.inject.Inject
 
@@ -43,7 +44,7 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator?) {
                     startActivity(Intent(this@SplashScreenActivity,
-                        LoginActivity::class.java))
+                        MainActivity::class.java))
                     finish()
                 }
             })
