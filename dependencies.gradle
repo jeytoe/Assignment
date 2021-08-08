@@ -70,7 +70,8 @@ ext.versions = [
         chucker            : '3.2.0',
         androidSecurity    : '1.0.0-alpha02',
         sqlCipher          : '4.4.3@aar',
-        activityKtx        : '1.2.3'
+        activityKtx        : '1.2.3',
+        navVersion        : '2.3.5'
 ]
 
 ext.libraries = [
@@ -150,8 +151,9 @@ ext.libraries = [
         chuckerNoOp              : "com.github.chuckerteam.chucker:library-no-op:$versions.chucker",
         androidSecurity          : "androidx.security:security-crypto:$versions.androidSecurity",
         sqlCipher                : "net.zetetic:android-database-sqlcipher:$versions.sqlCipher",
-        activityKtx              : "androidx.activity:activity-ktx:$versions.activityKtx"
-
+        activityKtx              : "androidx.activity:activity-ktx:$versions.activityKtx",
+        navigationFragment       : "androidx.navigation:navigation-fragment-ktx:$versions.navVersion",
+        navagationUi             : "androidx.navigation:navigation-ui-ktx:$versions.navVersion"
 ]
 
 ext.unitTestLibraries = [
