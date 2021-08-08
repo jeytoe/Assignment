@@ -1,11 +1,13 @@
 package com.example.androidassessment.login
 
+import android.content.Intent
 import android.os.Bundle
 import com.example.androidassessment.R
 import com.example.androidassessment.base.BaseActivity
 import com.example.androidassessment.common.AlertDialogFactory
 import com.example.androidassessment.common.KeyboardManager
 import com.example.androidassessment.databinding.ActivityLoginBinding
+import com.example.androidassessment.main.MainActivity
 import com.jakewharton.rxbinding2.view.RxView
 import com.jakewharton.rxbinding2.widget.RxTextView
 import dagger.android.AndroidInjection
@@ -64,9 +66,11 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                 when (it) {
-                    is LoginResult.Succeeded -> dialogFactory
-                        .getOkDialog(this, R.string.welcome)
-                        .show()
+                    is LoginResult.Succeeded ->
+//                        dialogFactory
+//                        .getOkDialog(this, R.string.welcome)
+//                        .show()
+                    startActivity(Intent(this, MainActivity::class.java))
 
                     is LoginResult.Failed -> dialogFactory
                         .getOkDialog(this, R.string.not_welcome)

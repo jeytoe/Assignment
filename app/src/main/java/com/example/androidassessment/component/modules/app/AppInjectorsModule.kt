@@ -1,6 +1,7 @@
 package com.example.androidassessment.component.modules.app
 
 import com.example.androidassessment.login.LoginActivity
+import com.example.androidassessment.main.userlist.UserListFragment
 import com.example.androidassessment.splashscreen.SplashScreenActivity
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
@@ -13,4 +14,7 @@ interface AppInjectorsModule {
 
     @ContributesAndroidInjector
     fun contributesLoginActivityInjector(): LoginActivity?
+
+    @ContributesAndroidInjector
+    fun contributesUserListFragmentInjector(): UserListFragment?
 }
