@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.example.androidassessment.component.modules.network.configurations.ApiConfiguration;
 import com.example.androidassessment.component.modules.network.configurations.SchedulerConfiguration;
+import com.example.androidassessment.component.modules.network.userlist.UserListService;
 import com.google.gson.Gson;
 
 import okhttp3.OkHttpClient;
@@ -40,5 +41,9 @@ public class NetworkObjectGraph {
 
     public Gson gson() {
         return component.gson();
+    }
+
+    public UserListService userListService() {
+        return component.userListService();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.androidassessment.component.modules.network
 
+import com.example.androidassessment.component.modules.network.userlist.UserListService
 import com.google.gson.Gson
 import dagger.Component
 import okhttp3.OkHttpClient
@@ -14,4 +15,5 @@ interface NetworkComponent {
     fun okHttpClient(): OkHttpClient?
     fun httpLoggingInterceptor(): HttpLoggingInterceptor?
     fun gson(): Gson?
+    fun userListService(): UserListService
 }

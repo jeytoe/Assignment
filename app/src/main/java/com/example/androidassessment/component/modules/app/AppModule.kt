@@ -3,15 +3,14 @@ package com.example.androidassessment.component.modules.app
 import android.app.Application
 import android.content.Context
 import android.content.res.Resources
-import com.example.androidassessment.BuildConfig
 import com.example.androidassessment.component.modules.network.NetworkObjectGraph
 import com.example.androidassessment.component.modules.network.configurations.ApiConfiguration
 import com.example.androidassessment.component.modules.network.configurations.ApiConfigurationImpl
-import com.google.gson.Gson
+import com.example.androidassessment.component.modules.network.configurations.SchedulerConfigurationImp
+import com.example.androidassessment.component.modules.network.userlist.UserListService
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
-import retrofit2.Retrofit
 import javax.inject.Singleton
 
 @Module
@@ -47,20 +46,17 @@ class AppModule(private val application: Application) {
 
     @Provides
     @Singleton
-    fun providesRetrofit(networkObjectGraph: NetworkObjectGraph): Retrofit {
-        val okHttpBuilder = networkObjectGraph.okHttpClient()
-            .newBuilder()
-        if (!BuildConfig.DEBUG) {
-            okHttpBuilder.addInterceptor(networkObjectGraph.httpLoggingInterceptor())
-        }
-        val okHttpClient = okHttpBuilder.build()
-        return networkObjectGraph.retrofit().newBuilder().client(okHttpClient).build()
+    fun provideUserListService(networkObjectGraph: NetworkObjectGraph): UserListService {
+        return networkObjectGraph.userListService()
     }
 
     @Provides
-    @Singleton
-    fun provideGson(networkObjectGraph: NetworkObjectGraph): Gson {
-        return networkObjectGraph.gson()
+    fun providesNetworkObjectGraph(): NetworkObjectGraph {
+        return NetworkObjectGraph(
+            ApiConfigurationImpl(application.cacheDir),
+            SchedulerConfigurationImp(),
+            application.applicationContext
+        )
     }
 
     companion object {

@@ -4,7 +4,7 @@ import java.io.File
 
 class ApiConfigurationImpl(override val cacheDir: File) : ApiConfiguration {
     override val apiHost: String
-        get() = ""
+        get() = "https://jsonplaceholder.typicode.com/"
     override val cacheSize: Int
         get() = 15 * 1024 * 1024
     override val timeoutSeconds: Int
