@@ -5,11 +5,14 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.androidassessment.R
 import com.example.androidassessment.base.BaseFragment
 import com.example.androidassessment.common.AlertDialogFactory
 import com.example.androidassessment.databinding.FragmentUserListBinding
+import com.google.gson.Gson
 import dagger.android.support.AndroidSupportInjection
 import io.reactivex.disposables.CompositeDisposable
 import javax.inject.Inject
@@ -27,6 +30,9 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>() {
 
     @Inject
     lateinit var adapter: UserListAdapter
+
+    @Inject
+    lateinit var gson: Gson
 
     override fun getToolbarTitle(): Int = R.string.user_list_title
 
@@ -66,6 +72,10 @@ class UserListFragment : BaseFragment<FragmentUserListBinding>() {
         compositeDisposable.add(adapter.onClickEvent
             .subscribe {
                 Log.e("hehehe", "clicked ${it.email}")
+                val action =
+                    UserListFragmentDirections
+                        .listToDetails(gson.toJson(it))
+                findNavController().navigate(action)
             })
     }
 

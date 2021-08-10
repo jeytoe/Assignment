@@ -8,6 +8,7 @@ import com.example.androidassessment.component.modules.network.configurations.Ap
 import com.example.androidassessment.component.modules.network.configurations.ApiConfigurationImpl
 import com.example.androidassessment.component.modules.network.configurations.SchedulerConfigurationImp
 import com.example.androidassessment.component.modules.network.userlist.UserListService
+import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
@@ -48,6 +49,12 @@ class AppModule(private val application: Application) {
     @Singleton
     fun provideUserListService(networkObjectGraph: NetworkObjectGraph): UserListService {
         return networkObjectGraph.userListService()
+    }
+
+    @Provides
+    @Singleton
+    fun provideGson(networkObjectGraph: NetworkObjectGraph): Gson {
+        return networkObjectGraph.gson()
     }
 
     @Provides

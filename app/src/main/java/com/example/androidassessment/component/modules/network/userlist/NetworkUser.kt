@@ -22,9 +22,9 @@ data class Address(
 )
 
 data class LatLong(
-    var lat: Float,
+    var lat: Double,
     @SerializedName("lng")
-    var long: Float
+    var long: Double
 )
 
 data class Company(
