@@ -34,7 +34,7 @@
   </style>
 
   <style name="SqToolbarStyle" parent="ThemeOverlay.AppCompat.ActionBar">
-    <item name="colorControlNormal">@color/sia_blue</item>
+    <item name="colorControlNormal">@color/white</item>
   </style>
 
 <!--  <style name="CardRoundedCorner">-->

@@ -7,6 +7,9 @@ import androidx.annotation.StringRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.app.NavUtils
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.NavigationUI
 import androidx.viewbinding.ViewBinding
 import com.example.androidassessment.R
 import com.example.androidassessment.databinding.ActivityBaseBinding
@@ -30,13 +33,12 @@ abstract class BaseActivity<VBinding : ViewBinding> : AppCompatActivity() {
         setupToolbar()
     }
 
-
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == android.R.id.home) {
-            navigateUp()
+            onBackPressed()
             return true
         }
-        return super.onOptionsItemSelected(item)
+        return true
     }
 
     protected open fun enableBackButton(): Boolean {
