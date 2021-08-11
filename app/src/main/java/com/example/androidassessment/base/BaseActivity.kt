@@ -38,7 +38,7 @@ abstract class BaseActivity<VBinding : ViewBinding> : AppCompatActivity() {
             onBackPressed()
             return true
         }
-        return true
+        return false
     }
 
     protected open fun enableBackButton(): Boolean {

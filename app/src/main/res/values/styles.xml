@@ -6,15 +6,8 @@
     <item name="colorControlActivated">@color/sia_blue</item>
     <item name="android:windowTranslucentStatus">true</item>
     <item name="android:statusBarColor">@color/status_bar</item>
+    <item name="android:actionMenuTextColor">@color/white</item>
   </style>
-
-<!--  <style name="Theme.WebViewProgress" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">-->
-<!--    <item name="android:textViewStyle">@style/SqTextView</item>-->
-<!--    <item name="colorControlNormal">@color/sia_blue</item>-->
-<!--    <item name="colorControlActivated">@color/sia_blue</item>-->
-<!--    <item name="colorAccent">@color/sia_blue</item>-->
-<!--    <item name="android:windowTranslucentStatus">true</item>-->
-<!--  </style>-->
 
 
   <style name="Theme.Splash.Transparent" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
@@ -37,29 +30,6 @@
     <item name="colorControlNormal">@color/white</item>
   </style>
 
-<!--  <style name="CardRoundedCorner">-->
-<!--    <item name="android:background">@drawable/card_rounded_corner</item>-->
-<!--    <item name="android:layout_marginTop">@dimen/card_rounded_corner_margin</item>-->
-<!--    <item name="android:layout_marginStart">@dimen/card_rounded_corner_margin</item>-->
-<!--    <item name="android:layout_marginEnd">@dimen/card_rounded_corner_margin</item>-->
-<!--  </style>-->
-
-<!--  <style name="CardRoundedCornerNoMargin">-->
-<!--    <item name="android:background">@drawable/card_rounded_corner</item>-->
-<!--  </style>-->
-
-<!--  <style name="CardRoundedTopCorner">-->
-<!--    <item name="android:background">@drawable/card_rounded_top_corner</item>-->
-<!--  </style>-->
-
-<!--  <style name="CardRoundedBottomCorner">-->
-<!--    <item name="android:background">@drawable/card_bottom_rounded_corner</item>-->
-<!--  </style>-->
-
-<!--  <style name="CardRoundedBottomCornerGrey">-->
-<!--    <item name="android:background">@drawable/card_bottom_rounded_corner_grey</item>-->
-<!--  </style>-->
-
   <style name="CardList">
     <item name="android:background">@android:color/white</item>
     <item name="android:paddingTop">5dp</item>
@@ -70,193 +40,8 @@
     <item name="android:layout_marginEnd">10dp</item>
   </style>
 
-<!--  <style name="OverlayCard">-->
-<!--    <item name="android:background">@drawable/overlay_card</item>-->
-<!--    <item name="android:paddingTop">@dimen/overlay_card_paddingTop</item>-->
-<!--    <item name="android:fitsSystemWindows">true</item>-->
-<!--  </style>-->
-
-<!--  <style name="OverlayBackground">-->
-<!--    <item name="android:windowBackground">@color/overlay_background</item>-->
-<!--  </style>-->
-
-<!--  <style name="CardRoundedCornerContent">-->
-<!--    <item name="android:paddingStart">@dimen/card_rounded_corner_content_padding</item>-->
-<!--    <item name="android:paddingEnd">@dimen/card_rounded_corner_content_padding</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqButton">-->
-<!--    <item name="android:background">@drawable/sq_button_selector</item>-->
-<!--    <item name="android:textColor">@android:color/white</item>-->
-<!--    <item name="android:minHeight">@dimen/button_height</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:gravity">center</item>-->
-<!--    <item name="android:textAllCaps">true</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_semibold</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqGooglePayButton">-->
-<!--    <item name="android:background">@drawable/sq_black_button_selector</item>-->
-<!--    <item name="android:textColor">@android:color/white</item>-->
-<!--    <item name="android:minHeight">@dimen/button_height</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:gravity">center</item>-->
-<!--    <item name="android:textAllCaps">true</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_semibold</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqButtonSmall">-->
-<!--    <item name="android:background">@drawable/sq_button_selector</item>-->
-<!--    <item name="android:minHeight">31dp</item>-->
-<!--    <item name="android:textColor">@android:color/white</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h4</item>-->
-<!--    <item name="android:gravity">center</item>-->
-<!--    <item name="android:textAllCaps">false</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_semibold</item>-->
-<!--  </style>-->
-
-<!--  <style name="SecondaryButton">-->
-<!--    <item name="android:background">@drawable/secondary_button_selector</item>-->
-<!--    <item name="android:textColor">@drawable/secondary_button_text_selector</item>-->
-<!--    <item name="android:minHeight">@dimen/button_height</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:gravity">center</item>-->
-<!--    <item name="android:textAllCaps">true</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_semibold</item>-->
-<!--  </style>-->
-
   <style name="SqToolBarTitle">
     <item name="android:textSize">20sp</item>
-<!--    <item name="android:fontFamily">@font/sigvar_serial_medium</item>-->
   </style>
-
-<!--  <style name="SqToolBarWebViewTitle">-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--    <item name="android:textColor">@color/black</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTextView" parent="android:Widget.TextView">-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTabLayout" parent="Widget.Design.TabLayout">-->
-<!--    <item name="tabTextAppearance">@style/SqTab</item>-->
-<!--    <item name="tabIndicatorColor">@color/sia_blue</item>-->
-<!--    <item name="tabTextColor">@color/dark_grey</item>-->
-<!--    <item name="tabSelectedTextColor">@color/sia_blue</item>-->
-<!--    <item name="tabIndicatorHeight">@dimen/tabview_indicator_height</item>-->
-<!--    <item name="tabGravity">fill</item>-->
-<!--    <item name="tabMode">fixed</item>-->
-<!--    <item name="android:background">@android:color/white</item>-->
-<!--    <item name="android:minHeight">@dimen/tabview_height</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTab" parent="TextAppearance.Design.Tab">-->
-<!--    <item name="textAllCaps">false</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTextInputLayout.Hint" parent="TextAppearance.Design.Hint">-->
-<!--    <item name="android:textColor">@color/dark_grey</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTextInputLayout.Error" parent="TextAppearance.Design.Error">-->
-<!--    <item name="android:textColor">@color/brick</item>-->
-<!--    <item name="android:textSize">12sp</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqTextInputEditText">-->
-<!--    <item name="android:textColor">@color/black</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:maxLines">1</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--    <item name="android:paddingTop">3dp</item>-->
-<!--    <item name="android:minHeight">@dimen/input_height</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqCheckbox">-->
-<!--    <item name="android:button">@drawable/sq_checkbox</item>-->
-<!--    <item name="android:textColor">@color/black</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_regular</item>-->
-<!--    <item name="android:paddingStart">@dimen/checkbox_start_padding</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqMaterialEditText">-->
-<!--    <item name="android:layout_marginStart">15dp</item>-->
-<!--    <item name="android:layout_marginEnd">15dp</item>-->
-<!--    <item name="android:gravity">bottom</item>-->
-<!--  </style>-->
-
-<!--  <style name="Dialog.Ok" parent="Theme.AppCompat.Light.Dialog.Alert">-->
-<!--    <item name="colorAccent">@color/sia_blue</item>-->
-<!--    <item name="android:textColorPrimary">@color/black</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_semibold</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:windowTitleStyle">@style/DialogTitleText</item>-->
-<!--  </style>-->
-
-<!--  <style name="DatePickerSpinnerStyle" parent="@android:style/Widget.Material.DatePicker">-->
-<!--    <item name="android:colorControlNormal">@color/sia_blue</item>-->
-<!--    <item name="android:textColorPrimary">@color/black</item>-->
-<!--  </style>-->
-
-<!--  <style name="DialogTitleText" parent="H2BoldGold"/>-->
-
-<!--  <style name="Dialog.Loading" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">-->
-<!--    <item name="android:windowIsTranslucent">true</item>-->
-<!--    <item name="android:windowBackground">@android:color/transparent</item>-->
-<!--    <item name="android:windowContentOverlay">@null</item>-->
-<!--    <item name="android:windowNoTitle">true</item>-->
-<!--    <item name="android:backgroundDimEnabled">false</item>-->
-<!--  </style>-->
-
-<!--  <style name="H2BoldGold">-->
-<!--    <item name="android:textColor">@color/suites_gold</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_bold</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h2</item>-->
-<!--  </style>-->
-
-<!--  <style name="SqMaterialSwitch">-->
-<!--    <item name="colorControlActivated">@color/sia_blue</item>-->
-<!--  </style>-->
-
-<!--  <style name="FlightTypeRadioButton">-->
-<!--    <item name="android:button">@null</item>-->
-<!--    <item name="android:textSize">@dimen/text_size_h2</item>-->
-<!--    <item name="android:background">?selectableItemBackgroundBorderless</item>-->
-<!--  </style>-->
-
-<!--  <style name="CalendarTitle">-->
-<!--    <item name="android:textSize">@dimen/text_size_h2</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_bold</item>-->
-<!--  </style>-->
-
-<!--  <style name="CalendarCell">-->
-<!--    <item name="android:layout_width">0dp</item>-->
-<!--    <item name="android:layout_weight">1</item>-->
-<!--    <item name="android:gravity">center</item>-->
-<!--    <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>-->
-<!--  </style>-->
-
-<!--  <style name="CalendarCell.DayHeader">-->
-<!--    <item name="android:textSize">@dimen/text_size_h3</item>-->
-<!--    <item name="android:fontFamily">@font/proxima_nova_bold</item>-->
-<!--  </style>-->
-
-<!--  <style name="CalendarCell.CalendarDate">-->
-<!--    <item name="android:textSize">@dimen/text_size_h2</item>-->
-<!--    <item name="android:layout_height">wrap_content</item>-->
-<!--  </style>-->
-
-<!--  <style name="CalendarCell.SubTitle">-->
-<!--    <item name="android:textSize">@dimen/calendar_text_tiny</item>-->
-<!--    <item name="android:textColor">@color/calendar_text_active</item>-->
-<!--    <item name="android:layout_height">wrap_content</item>-->
-<!--    <item name="android:layout_marginTop">40dp</item>-->
-<!--  </style>-->
 
 </resources>

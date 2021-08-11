@@ -5,6 +5,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import com.example.androidassessment.ActivityScenarioRule
 import com.example.androidassessment.R
 import com.example.androidassessment.UserDbRule
+import com.example.androidassessment.main.MainActivity
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
@@ -35,13 +36,13 @@ class LoginActivityTest {
             .typesPassword("124124")
             .seesLoginButtonState(true)
             .clicksLoginButton()
-            .seesDialogWithMessage(R.string.not_welcome)
+            .seesDialogWithMessage(R.string.wrong_credentials)
             .clicksOkayButton()
             .typesUsername("username")
             .typesPassword("username")
             .clicksLoginButton()
-            .seesDialogWithMessage(R.string.welcome)
-            .clicksOkayButton()
+
+        activityRule.checkActivityLaunched(MainActivity::class.java)
     }
 
     private fun launchActivity() {

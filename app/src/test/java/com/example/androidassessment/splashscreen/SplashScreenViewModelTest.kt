@@ -1,5 +1,6 @@
 package com.example.androidassessment.splashscreen
 
+import android.content.SharedPreferences
 import com.example.androidassessment.component.modules.database.User
 import com.example.androidassessment.component.modules.database.UserRepository
 import com.nhaarman.mockito_kotlin.any
@@ -25,6 +26,9 @@ class SplashScreenViewModelTest {
 
     @Mock
     lateinit var compositeDisposable: CompositeDisposable
+
+    @Mock
+    lateinit var sharedPreferences: SharedPreferences
 
     @Test
     fun initUserDatabase_givenDbIsEmpty_addUserIntoTable() {

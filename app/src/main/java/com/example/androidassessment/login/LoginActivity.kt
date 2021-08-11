@@ -71,11 +71,13 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe {
                 when (it) {
-                    is LoginResult.Succeeded ->
+                    is LoginResult.Succeeded -> {
                         startActivity(Intent(this, MainActivity::class.java))
+                        finish()
+                    }
 
                     is LoginResult.Failed -> dialogFactory
-                        .getOkDialog(this, R.string.not_welcome)
+                        .getOkDialog(this, R.string.wrong_credentials)
                         .show()
 
                 }

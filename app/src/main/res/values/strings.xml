@@ -8,9 +8,10 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in_short">Sign in</string>
     <string name="welcome">"Welcome !"</string>
-    <string name="not_welcome">"Not Welcome !"</string>
+    <string name="wrong_credentials">"Wrong Username or Password!"</string>
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >= 8 characters</string>
     <string name="login_failed">"Login failed"</string>
     <string name="get_user_list_failed">Failed to get user list. Please try again later!</string>
+    <string name="log_out">Log out</string>
 </resources>

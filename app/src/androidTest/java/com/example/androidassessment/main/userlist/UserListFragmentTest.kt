@@ -2,6 +2,7 @@ package com.example.androidassessment.main.userlist
 
 import com.example.androidassessment.ActivityScenarioRule
 import com.example.androidassessment.R
+import com.example.androidassessment.login.LoginActivity
 import com.test.DummyActivity
 import org.junit.Rule
 import org.junit.Test
@@ -25,6 +26,17 @@ class UserListFragmentTest {
             .seesUsernameAtPosition("Delphine", 8)
             .seesUsernameAtPosition("Moriah.Stanton", 9)
 
+    }
+
+    @Test
+    fun userListFragment_verifyLogoutButton() {
+        launchActivity()
+
+        userListFragmentRobot
+            .waitsFor(2000)
+            .clicksLogout()
+
+        activityRule.checkActivityLaunched(LoginActivity::class.java)
     }
 
     private fun launchActivity() {

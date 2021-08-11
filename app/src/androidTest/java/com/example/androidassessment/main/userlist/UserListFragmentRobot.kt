@@ -3,6 +3,7 @@ package com.example.androidassessment.main.userlist
 import android.os.SystemClock
 import androidx.recyclerview.widget.RecyclerView
 import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.action.ViewActions.click
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.contrib.RecyclerViewActions.scrollToPosition
 import androidx.test.espresso.matcher.ViewMatchers.*
@@ -26,5 +27,9 @@ class UserListFragmentRobot {
     fun waitsFor(delayInMilliseconds: Long): UserListFragmentRobot {
         SystemClock.sleep(delayInMilliseconds)
         return this
+    }
+
+    fun clicksLogout() {
+        onView(withId(R.id.log_out)).perform(click());
     }
 }
