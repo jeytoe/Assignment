@@ -1,10 +1,13 @@
 package com.example.androidassessment.login
 
 import android.content.SharedPreferences
+import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModel
+import com.example.androidassessment.R
 import com.example.androidassessment.component.modules.app.AppModule.Companion.SETTINGS_PREFERENCES_SHARED_PREFS
 import com.example.androidassessment.component.modules.database.User
 import com.example.androidassessment.component.modules.database.UserRepository
+import com.example.androidassessment.login.extension.isValidEmailAddress
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.subjects.BehaviorSubject
@@ -48,17 +51,27 @@ class LoginViewModel @Inject constructor(
     }
 
     fun setupLoginEvents(): BehaviorSubject<LoginResult> {
-        compositeDisposable.add(
-            loginButtonClicked.flatMap {
-                return@flatMap userRepository.getUser(username, password)
-            }.subscribe {
-                if (it.isEmpty()) {
-                    loginResult.onNext(LoginResult.Failed(""))
-                } else {
-                    loginResult.onNext(LoginResult.Succeeded(it[0]))
-                }
+
+        compositeDisposable.add(loginButtonClicked.flatMap outer@{
+            if (!username.isValidEmailAddress()) {
+                return@outer Observable.just(
+                    LoginResult.Failed(R.string.invalid_username_format)
+                )
+            } else if (password.length < 8) {
+                return@outer Observable.just(
+                    LoginResult.Failed(R.string.invalid_password_format)
+                )
             }
-        )
+            return@outer userRepository.getUser(username, password)
+                .flatMap {
+                    return@flatMap if (it.isEmpty())
+                        Observable.just(LoginResult.Failed(R.string.wrong_credentials))
+                    else Observable.just(LoginResult.Succeeded(it[0]))
+                }
+        }.subscribe {
+            loginResult.onNext(it)
+        })
+
         return loginResult
     }
 
@@ -69,5 +82,5 @@ class LoginViewModel @Inject constructor(
 
 sealed class LoginResult {
     class Succeeded(var user: User) : LoginResult()
-    class Failed(var reason: String) : LoginResult()
+    class Failed(@StringRes var reason: Int) : LoginResult()
 }

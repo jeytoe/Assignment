@@ -77,7 +77,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
                     }
 
                     is LoginResult.Failed -> dialogFactory
-                        .getOkDialog(this, R.string.wrong_credentials)
+                        .getOkDialog(this, it.reason)
                         .show()
 
                 }

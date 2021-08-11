@@ -15,8 +15,8 @@ class UserDbRule : ExternalResource() {
         clear()
     }
 
-    fun saveUser(username: String?) {
-        userRepository.insertUser(username!!, username)
+    fun saveUser(username: String, password: String) {
+        userRepository.insertUser(username, password)
     }
 
     private fun clear() {

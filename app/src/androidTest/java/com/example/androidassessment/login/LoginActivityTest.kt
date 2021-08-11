@@ -20,7 +20,7 @@ class LoginActivityTest {
 
     @Before
     fun setUp() {
-        userDbRule.saveUser("username")
+        userDbRule.saveUser("username@gmail.com", "username123")
     }
 
     private val loginActivityRobot = LoginActivityRobot()
@@ -36,10 +36,18 @@ class LoginActivityTest {
             .typesPassword("124124")
             .seesLoginButtonState(true)
             .clicksLoginButton()
+            .seesDialogWithMessage(R.string.invalid_username_format)
+            .clicksOkayButton()
+            .typesUsername("incorrectUsername@gmail.com")
+            .clicksLoginButton()
+            .seesDialogWithMessage(R.string.invalid_password_format)
+            .clicksOkayButton()
+            .typesPassword("username123")
+            .clicksLoginButton()
             .seesDialogWithMessage(R.string.wrong_credentials)
             .clicksOkayButton()
-            .typesUsername("username")
-            .typesPassword("username")
+            .typesUsername("username@gmail.com")
+            .typesPassword("username123")
             .clicksLoginButton()
 
         activityRule.checkActivityLaunched(MainActivity::class.java)
