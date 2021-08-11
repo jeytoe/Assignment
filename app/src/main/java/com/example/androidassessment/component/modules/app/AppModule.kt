@@ -2,6 +2,7 @@ package com.example.androidassessment.component.modules.app
 
 import android.app.Application
 import android.content.Context
+import android.content.SharedPreferences
 import android.content.res.Resources
 import com.example.androidassessment.component.modules.network.NetworkObjectGraph
 import com.example.androidassessment.component.modules.network.configurations.ApiConfiguration
@@ -12,6 +13,7 @@ import com.google.gson.Gson
 import dagger.Module
 import dagger.Provides
 import io.reactivex.disposables.CompositeDisposable
+import javax.inject.Named
 import javax.inject.Singleton
 
 @Module
@@ -64,6 +66,12 @@ class AppModule(private val application: Application) {
             SchedulerConfigurationImp(),
             application.applicationContext
         )
+    }
+
+    @Provides
+    @Named(SETTINGS_PREFERENCES_SHARED_PREFS)
+    fun provideSettingsPreferencesSharedPreferences(context: Context): SharedPreferences {
+        return context.getSharedPreferences(SETTINGS_PREFERENCES_SHARED_PREFS, Context.MODE_PRIVATE)
     }
 
     companion object {

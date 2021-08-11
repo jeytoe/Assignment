@@ -1,5 +1,6 @@
 package com.example.androidassessment.login
 
+import android.content.SharedPreferences
 import com.example.androidassessment.component.modules.database.User
 import com.example.androidassessment.component.modules.database.UserRepository
 import com.nhaarman.mockito_kotlin.eq
@@ -23,6 +24,9 @@ class LoginViewModelTest {
 
     @Mock
     lateinit var userRepository: UserRepository
+
+    @Mock
+    lateinit var sharedPreferences: SharedPreferences
 
     @Test
     fun setupBtnLoginStateEvent_givenPasswordIsEmpty_shouldEmitFalse() {
@@ -82,5 +86,19 @@ class LoginViewModelTest {
         //call with initial values of username and password
         verify(userRepository).getUser(eq(""), eq(""))
         actual.assertValue { it is LoginResult.Failed }
+    }
+
+    @Test
+    fun updateRememberLogin_verifySharePreferencesCalled() {
+        val editor = mock(SharedPreferences.Editor::class.java)
+        `when`(sharedPreferences.edit())
+            .thenReturn(editor)
+        `when`(editor.putBoolean(anyString(), anyBoolean()))
+            .thenReturn(editor)
+        subject.updateRememberLogin(true)
+
+        verify(sharedPreferences).edit()
+        verify(editor).putBoolean(SharedPreferencesKey.REMEMBER_LOGIN_KEY, true)
+        verify(editor).apply()
     }
 }

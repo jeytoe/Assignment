@@ -2,10 +2,10 @@ package com.example.androidassessment.splashscreen
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.view.animation.LinearInterpolator
-import androidx.lifecycle.ViewModelProvider
 import com.example.androidassessment.base.BaseActivity
 import com.example.androidassessment.databinding.ActivitySplashScreenBinding
 import com.example.androidassessment.login.LoginActivity
@@ -33,18 +33,19 @@ class SplashScreenActivity : BaseActivity<ActivitySplashScreenBinding>() {
 
     override fun onResume() {
         super.onResume()
-        displayLogo()
+        if (splashScreenViewModel.getRememberLoginValue())
+            displayLogoAndNavigateTo(MainActivity::class.java) else
+            displayLogoAndNavigateTo(LoginActivity::class.java)
     }
 
-    private fun displayLogo() {
+    private fun <T : Activity> displayLogoAndNavigateTo(clazz: Class<T>) {
         binding.imgLogo.animate()
             .alpha(1f)
             .setDuration(1500)
             .setInterpolator(LinearInterpolator())
             .setListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator?) {
-                    startActivity(Intent(this@SplashScreenActivity,
-                        MainActivity::class.java))
+                    startActivity(Intent(this@SplashScreenActivity, clazz))
                     finish()
                 }
             })

@@ -9,6 +9,7 @@ import com.example.androidassessment.common.KeyboardManager
 import com.example.androidassessment.databinding.ActivityLoginBinding
 import com.example.androidassessment.main.MainActivity
 import com.jakewharton.rxbinding2.view.RxView
+import com.jakewharton.rxbinding2.widget.RxCompoundButton
 import com.jakewharton.rxbinding2.widget.RxTextView
 import dagger.android.AndroidInjection
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -52,6 +53,10 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
     }
 
     private fun bindEvents() {
+        compositeDisposable.add(RxCompoundButton.checkedChanges(binding.cbRememberLogin)
+            .subscribe {
+                viewModel.updateRememberLogin(it)
+            })
         compositeDisposable.add(viewModel.setupBtnLoginStateEvent(
             RxTextView.textChanges(binding.username),
             RxTextView.textChanges(binding.password)
@@ -67,10 +72,7 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             .subscribe {
                 when (it) {
                     is LoginResult.Succeeded ->
-//                        dialogFactory
-//                        .getOkDialog(this, R.string.welcome)
-//                        .show()
-                    startActivity(Intent(this, MainActivity::class.java))
+                        startActivity(Intent(this, MainActivity::class.java))
 
                     is LoginResult.Failed -> dialogFactory
                         .getOkDialog(this, R.string.not_welcome)
